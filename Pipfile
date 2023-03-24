@@ -8,6 +8,8 @@ pandas = "*"
 requests = "*"
 boto3 = "*"
 toml = "*"
+sqlalchemy="*"
+dotenv="*"
 
 [dev-packages]
 

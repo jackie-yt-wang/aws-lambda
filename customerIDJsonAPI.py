@@ -18,7 +18,12 @@ sql_filename = app_config['run']['filename']
 # foldername= app_config['aws']['foldername']
 #############
 
+def read_sql_file(file_path):
+    with open(file_path, 'r') as f:
+        sql = f.read()
+    return sql
 
+sql = read_sql_file(sql_filename)
 
 
 session = boto3.Session()
