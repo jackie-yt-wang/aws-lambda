@@ -15,6 +15,8 @@ app_config = toml.load('config.toml')
 load_dotenv()
 user=os.getenv('user')
 password=os.getenv('password')
+access_key=os.getenv('access_key')
+secret_key=os.getenv('secret_key')
 
 sql_filename = app_config['sql']['filename']
 hostname = app_config['sql']['hostname']
@@ -48,17 +50,16 @@ def get_customer_data_to_json(engine, sql):
     df=pd.read_sql(sql, con=engine)
     data=df.to_json(orient='records')
     return data
-def connect_to_s3():
-    session = boto3.Session()
-    s3 = session.resource('s3')
-    s3_client = session.client('s3')
+
+def connect_to_s3(access_key,secret_key):
+    s3_client = boto3.client('s3', aws_access_key_id=access_key, aws_secret_access_key=secret_key)
     print('S3 Client Connected!')
     return s3_client
     
 def lamdba_handler(event, context):
     print("Received event: " + json.dumps(event, indent=2))
 
-    s3_client = connect_to_s3()
+    s3_client = connect_to_s3(access_key,secret_key)
     s3_client.download_file(bucketname, foldername+aws_filename, 'download/' + aws_filename)
     
     CustID = get_custID('download/' + aws_filename)

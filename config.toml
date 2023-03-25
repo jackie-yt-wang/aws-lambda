@@ -13,5 +13,4 @@ foldername='customer-superstore/'
 filename='top10customers.json'
 
 [run]
-py_script="muse-job-api.py"
-filename ='page50_sample_job_descriptions_test.csv'
+py_script="customerIDJsonAPI.py"

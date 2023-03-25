@@ -11,7 +11,7 @@ filenametime1=$(date +"%m%d%Y%H%M%S")
 filenametime2=$(date +"%Y-%m-%d %H:%M:%S")
 #########################################################
 # Part 2: SET VARIABLES 
-
+mkdir -p log/
 
 export PYTHON_SCRIPT_NAME=$(cat config.toml | grep 'py_script' | awk -F"=" '{print $2}' | tr -d '"') # get the py_script from config.toml, and remove the quotes
 export SCRIPTS_FOLDER=$(pwd)
@@ -30,7 +30,6 @@ exec > >(tee ${LOG_FILE}) 2>&1
 # PART 5: RUN SCRIPT
 echo "Start to run Python Script"
 pipenv run python3 ${SCRIPTS_FOLDER}/${PYTHON_SCRIPT_NAME}
-
 
 RC1=$?
 if [ ${RC1} != 0 ]; then
