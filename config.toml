@@ -3,10 +3,14 @@ url='https://www.themuse.com/api/public/jobs?page=50'
 
 [sql]
 filename='Top10CustomerIDBySales.sql'
+hostname='aws-mysql.colmzgu114nj.us-east-1.rds.amazonaws.com'
+port='3306'
+database='superstore'
 
-[aws]
+[s3]
 bucketname='jackie-aws-projects'
-foldername='muse-job/'
+foldername='customer-superstore/'
+filename='top10customers.json'
 
 [run]
 py_script="muse-job-api.py"
