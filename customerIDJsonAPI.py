@@ -8,7 +8,7 @@ import toml
 from dotenv import load_dotenv
 import sqlalchemy as sa
 from sqlalchemy import text
-
+import json 
 #############
 app_config = toml.load('config.toml')
 load_dotenv()
@@ -34,6 +34,7 @@ limit 10'''
 engine = sa.create_engine(f'mysql+pymysql://{user}:{password}@{hostname}:{port}/{database}')
 
 with engine.connect() as conn:
+
     resultsDF = pd.read_sql(text(CustomerQuery), conn)
 
 
@@ -42,6 +43,7 @@ s3 = session.resource('s3')
 s3_client = session.client('s3')
 print('S3 Client Connected!')
 
-resultsDF.to_csv('input/'+aws_filename,index=False)
+resultsDF.to_json('input/'+aws_filename)
+
 s3_client.upload_file('input/'+aws_filename, bucketname, foldername+aws_filename)
 print(aws_filename,'File Uploaded to Bucket',bucketname,foldername)
