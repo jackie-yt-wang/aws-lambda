@@ -56,16 +56,16 @@ def connect_to_s3(access_key,secret_key):
     print('S3 Client Connected!')
     return s3_client
     
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     print("Received event: " + json.dumps(event, indent=2))
 
     s3_client = connect_to_s3(access_key,secret_key)
-    s3_client.download_file(bucketname, foldername+aws_filename, 'download/' + aws_filename)
+    s3_client.download_file(bucketname, foldername+aws_filename, '/tmp/' + aws_filename)
     
-    CustID = get_custID('download/' + aws_filename)
-
+    CustID = get_custID('/tmp/' + aws_filename)
+    print(CustID)
     engine = mysql_connect(hostname, user, password, database, port, database)
-
+    print(engine)
     sql=f"""select customerID, CustomerName
             from customers
             where customerID in {CustID}
@@ -75,5 +75,6 @@ def lamdba_handler(event, context):
         data = get_customer_data_to_json(conn, text(sql))
 
     request = requests.post(api_url, data=data)
+    print(request.status_code)
 
     return request.status_code

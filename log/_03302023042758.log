@@ -1,0 +1,11 @@
+Start to run Python Script
+Installing dependencies from Pipfile.lock (f2fedd)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Traceback (most recent call last):
+  File "/home/ubuntu/aws-lambda/customerIDJsonAPI.py", line 8, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+PYTHON RUNNING FAILED
+[ERROR:] RETURN CODE:  1
+[ERROR:] REFER TO THE LOG FOR THE REASON FOR THE FAILURE.

@@ -1,0 +1,5 @@
+Start to run Python Script
+./run.sh: line 32: pipenv: command not found
+PYTHON RUNNING FAILED
+[ERROR:] RETURN CODE:  127
+[ERROR:] REFER TO THE LOG FOR THE REASON FOR THE FAILURE.

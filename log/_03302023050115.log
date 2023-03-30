@@ -1,0 +1,49 @@
+Start to run Python Script
+admin
+mHeqlI5VF8W2
+S3 Client Connected!
+Traceback (most recent call last):
+  File "/home/ubuntu/aws-lambda/customerIDJsonAPI.py", line 51, in <module>
+    s3_client.upload_file('input/'+aws_filename, bucketname, foldername+aws_filename)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/boto3/s3/inject.py", line 143, in upload_file
+    return transfer.upload_file(
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/boto3/s3/transfer.py", line 292, in upload_file
+    future.result()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/s3transfer/tasks.py", line 139, in __call__
+    return self._execute_main(kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/s3transfer/tasks.py", line 162, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/s3transfer/upload.py", line 758, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/client.py", line 530, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/client.py", line 943, in _make_api_call
+    http, parsed_response = self._make_request(
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/client.py", line 966, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/endpoint.py", line 198, in _send_request
+    request = self.create_request(request_dict, operation_model)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/endpoint.py", line 134, in create_request
+    self._event_emitter.emit(
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/signers.py", line 105, in handler
+    return self.sign(operation_name, request)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/signers.py", line 189, in sign
+    auth.add_auth(request)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/botocore/auth.py", line 418, in add_auth
+    raise NoCredentialsError()
+botocore.exceptions.NoCredentialsError: Unable to locate credentials
+PYTHON RUNNING FAILED
+[ERROR:] RETURN CODE:  1
+[ERROR:] REFER TO THE LOG FOR THE REASON FOR THE FAILURE.

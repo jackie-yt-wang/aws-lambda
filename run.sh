@@ -29,7 +29,9 @@ exec > >(tee ${LOG_FILE}) 2>&1
 #########################################################
 # PART 5: RUN SCRIPT
 echo "Start to run Python Script"
-pipenv run python3 ${SCRIPTS_FOLDER}/${PYTHON_SCRIPT_NAME}
+# Activate VENV
+. ${PYENV_ROOT}/versions/customerAPI/bin/activate
+python3 ${SCRIPTS_FOLDER}/${PYTHON_SCRIPT_NAME}
 
 RC1=$?
 if [ ${RC1} != 0 ]; then

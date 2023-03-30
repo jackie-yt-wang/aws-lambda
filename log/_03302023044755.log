@@ -1,0 +1,59 @@
+Start to run Python Script
+pyenv-virtualenv: `/home/ubuntu/.pyenv/versions/customerAPI' already exists.
+[31;1m
+Failed to activate virtualenv.
+
+Perhaps pyenv-virtualenv has not been loaded into your shell properly.
+Please restart current shell and try again.
+
+[0mTraceback (most recent call last):
+  File "/home/ubuntu/aws-lambda/customerIDJsonAPI.py", line 37, in <module>
+    with engine.connect() as conn:
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3251, in connect
+    return self._connection_cls(self)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 3275, in raw_connection
+    return self.pool.connect()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 455, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 1271, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 719, in checkout
+    rec = pool._do_get()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 169, in _do_get
+    self._dec_overflow()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/impl.py", line 166, in _do_get
+    return self._create_connection()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 396, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 681, in __init__
+    self.__connect()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 906, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/engine/create.py", line 636, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 580, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/connections.py", line 352, in __init__
+    self.connect()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/connections.py", line 636, in connect
+    self._request_authentication()
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/connections.py", line 925, in _request_authentication
+    auth_packet = self._process_auth(plugin_name, auth_packet)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/connections.py", line 960, in _process_auth
+    return _auth.sha256_password_auth(self, auth_packet)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/_auth.py", line 182, in sha256_password_auth
+    data = sha2_rsa_encrypt(conn.password, conn.salt, conn.server_public_key)
+  File "/home/ubuntu/.pyenv/versions/customerAPI/lib/python3.8/site-packages/pymysql/_auth.py", line 143, in sha2_rsa_encrypt
+    raise RuntimeError(
+RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+PYTHON RUNNING FAILED
+[ERROR:] RETURN CODE:  1
+[ERROR:] REFER TO THE LOG FOR THE REASON FOR THE FAILURE.

@@ -1,0 +1,3 @@
+Start to run Python Script
+./run.sh: line 32: syntax error near unexpected token `newline'
+./run.sh: line 32: `pyenv activate <python3.8>'

@@ -1,0 +1,18 @@
+Start to run Python Script
+[31;1m
+Failed to activate virtualenv.
+
+Perhaps pyenv-virtualenv has not been loaded into your shell properly.
+Please restart current shell and try again.
+
+[0mShell for /home/ubuntu/.local/share/virtualenvs/aws-lambda-0-wMASBs already activated.
+No action taken to avoid nested environments.
+Installing dependencies from Pipfile.lock (f2fedd)...
+Installing dependencies from Pipfile.lock (f2fedd)...
+Traceback (most recent call last):
+  File "/home/ubuntu/aws-lambda/customerIDJsonAPI.py", line 8, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+PYTHON RUNNING FAILED
+[ERROR:] RETURN CODE:  1
+[ERROR:] REFER TO THE LOG FOR THE REASON FOR THE FAILURE.

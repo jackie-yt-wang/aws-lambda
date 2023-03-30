@@ -1,0 +1,12 @@
+Start to run Python Script
+[31;1m
+Failed to activate virtualenv.
+
+Perhaps pyenv-virtualenv has not been loaded into your shell properly.
+Please restart current shell and try again.
+
+[0madmin
+mHeqlI5VF8W2
+S3 Client Connected!
+top10customers.json File Uploaded to Bucket jackie-aws-projects customer-superstore/
+PROGRAM SUCCEEDED
