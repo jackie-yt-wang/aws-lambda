@@ -74,7 +74,8 @@ def lambda_handler(event, context):
     with engine.connect() as conn:
         data = get_customer_data_to_json(conn, text(sql))
 
-    request = requests.post(api_url, data=data)
+    # request = requests.post(api_url, data=data)
+    request = requests.get('https://3xfknu52h2.execute-api.us-east-1.amazonaws.com/')
     print(request.status_code)
 
     return request.status_code
