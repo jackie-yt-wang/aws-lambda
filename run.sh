@@ -30,6 +30,7 @@ exec > >(tee ${LOG_FILE}) 2>&1
 # PART 5: RUN SCRIPT
 echo "Start to run Python Script"
 # Activate VENV
+# pyenv activate customerAPI
 . ${PYENV_ROOT}/versions/customerAPI/bin/activate
 python3 ${SCRIPTS_FOLDER}/${PYTHON_SCRIPT_NAME}
 
